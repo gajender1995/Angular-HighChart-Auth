@@ -1,0 +1,15 @@
+<div class="container">
+    <h1>Login Form</h1>
+    <form #heroForm="ngForm">
+      <div class="form-group">
+        <label for="name">UserName</label>
+        <input type="text" class="form-control" id="name" [(ngModel)]="model.username" name="username" required>
+      </div>
+ 
+      <div class="form-group">
+        <label for="alterEgo">Password</label>
+        <input type="password" class="form-control" id="alterEgo" [(ngModel)]="model.password" name="passoword">
+      </div>
+      <button type="button" class="btn btn-success" (click)="onSubmit(model)" >Submit</button>
+    </form>
+</div>
