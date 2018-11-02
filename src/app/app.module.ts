@@ -22,7 +22,7 @@ import { ChartModule } from 'angular2-highcharts';
     routing,
     FormsModule,
     HttpClientModule, 
-    ChartModule.forRoot(require('highcharts'))
+    ChartModule.forRoot(require('highcharts')
   ],
   providers: [AuthService,ChartService],
   bootstrap: [AppComponent]
