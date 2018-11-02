@@ -1,5 +1,6 @@
 import { Component , OnInit } from '@angular/core';
 import { ChartService  } from './chart.service';
+
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -10,8 +11,7 @@ export class UserComponent implements OnInit {
  constructor( private chartService : ChartService) {
 
 
-        
-    }
+ }
     options: Object;
     dataArr = [];
     dataArr2 = [];

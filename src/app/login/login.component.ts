@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './auth.service'
+import * as MyModule from './exter.js';
+
+console.log('my value is', MyModule.value); 
 
 @Component({
   selector: 'app-login',
@@ -8,8 +11,10 @@ import { AuthService } from './auth.service'
 })
 export class LoginComponent implements OnInit,user {
   list : any;
-  constructor(private authService:AuthService) { }
-
+  constructor(private authService:AuthService) {
+ 
+   }
+ 
   username : string;
   password : string;
   model = {
@@ -19,9 +24,11 @@ export class LoginComponent implements OnInit,user {
 
   ngOnInit() {
     console.log("Login");
+
   }
 
   onSubmit(heroForm) { debugger; 
+ 
   if(heroForm.username == 'demo' && heroForm.password == 'demo'){
   this.authService.setLogin(true); alert("Success")}
   else{
