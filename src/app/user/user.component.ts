@@ -14,6 +14,7 @@ export class UserComponent implements OnInit {
     }
     options: Object;
     dataArr = [];
+    dataArr2 = [];
     i = 0;
 
 ngOnInit() {
@@ -31,13 +32,20 @@ this.chartService.getChart1('https://jsonplaceholder.typicode.com/users').subscr
       
      if(data.body){
      this.dataArr= [];
+     this.dataArr2= [];
       for(var i=0 ; i<data.body.length;i++){
-      this.dataArr.push(data.body[i].id+Math.floor(Math.random()*6+1));
+      this.dataArr.push(data.body[i].id+Math.floor(Math.random()*40+1));
+      this.dataArr2.push(data.body[i].id+Math.floor(Math.random()*40+1));
       if(i == data.body.length-1){
          this.options = {
             title : { text : 'simple chart' },
             series: [{
+                name : 'User Online',
                 data:  this.dataArr,
+            },
+            {
+                name : 'File Download',
+                data:  this.dataArr2,
             }]
         };
 

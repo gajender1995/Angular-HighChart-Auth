@@ -1,0 +1,6 @@
+ul{
+	display: inline-flex;
+}
+li{
+	margin-left: 30px;
+}
