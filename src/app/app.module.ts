@@ -9,18 +9,6 @@ import { UserComponent } from './user/user.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ChartService } from './user/chart.service';
 
-import { ChartModule } from 'angular2-highcharts';
-import { HighchartsStatic } from 'angular2-highcharts/dist/HighchartsService';
-
-declare var require: any;
-
-export function highchartsFactory() {
-  const hc = require('highcharts');
-  const dd = require('highcharts/modules/drilldown');
-  dd(hc);
-
-  return hc;
-}
 
 
 @NgModule({
@@ -33,13 +21,9 @@ export function highchartsFactory() {
     BrowserModule,
     routing,
     FormsModule,
-    HttpClientModule,
-    ChartModule
+    HttpClientModule
   ],
-  providers: [AuthService, ChartService, {
-    provide: HighchartsStatic,
-    useFactory: highchartsFactory
-  }],
+  providers: [AuthService, ChartService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

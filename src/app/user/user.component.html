@@ -1,7 +1,109 @@
  user works Select option     
- <select (change)="callApi()">
-        <option>Chart1</option>
-        <option>Chart2</option>
-        <option>Chart3</option>
+ <select (change)="callApi($event.target.value)">
+        <option>London</option>
+        <option>Delhi</option>
+        <option>Shuzenji</option>
+        <option>Noida</option>
 </select>
-<chart [options]="options" ></chart>
+<p>{{model.name}} </p>
+<p>{{model.temp}} {{model.weather}} </p>
+<p> {{forcastModel.date[3]}}
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<body>
+<h1>Weather Report</h1>
+<div class="main-agileits">
+	<div class="weather-agile">
+		<div class="weather-top-agileits-w3layouts">
+			<div class="weather-w3ls">
+				<img src="../../assets/images/forecast.png" alt=" " />
+				<h5>{{model.weather}}</h5>
+			</div>
+			<div class="weather-agileinfo">
+				<h4> {{model.temp}}°F</h4>
+				<h5>{{model.name}}</h5>
+			</div>
+			<div class="clear"></div>	
+		</div>
+		<div class="weather-bottom-w3-agile">
+		<select class="dropdown" (change)="callApi($event.target.value)">
+	        <option value="London">London</option>
+	        <option value="Delhi">Delhi</option>
+	        <option value="Shuzenji">Shuzenji</option>
+	        <option value="Noida">Noida</option>
+		</select>
+		</div>
+		<div class="search-w3">
+			<form action="#" method="post">
+				<input type="submit" value=" ">
+				<input type="text" name="Search" placeholder="Search" required="">
+			</form>
+		</div>
+		<div class="scrollbar" id="style-2">
+			<!-- <ul >
+				<li>Sun <span>14/08</span></li>
+				<li>19°C <canvas id="clear-day" width="18" height="18"></canvas></li>
+			</ul> -->
+			<ul class="myul"> 
+  <li class="sp" *ngFor="let person of forcastModel.date"> 
+    {{ person }}
+  </li>
+ </ul>
+			<!-- <ul>
+				<li>Mon <span>15/08</span></li>
+				<li>17°C <canvas id="fog" width="18" height="18"></canvas></li>
+			</ul>
+			<ul>
+				<li>Tue <span>16/08</span></li>
+				<li>24°C <canvas id="clear-night" width="18" height="18"></canvas></li>
+			</ul>
+			<ul>
+				<li>Wed <span>17/08</span></li>
+				<li>14°C <canvas id="partly-cloudy-night" width="18" height="18"></canvas></li>
+			</ul>
+			<ul>
+				<li>Thu <span>18/08</span></li>
+				<li>10°C <canvas id="rain" width="18" height="18"></canvas></li>
+			</ul>
+			<ul>
+				<li>Fri <span>26/08</span></li>
+				<li>5°C <canvas id="snow" width="18" height="18"></canvas></li>
+			</ul>
+			<ul>
+				<li>Sat <span>27/08</span></li>
+				<li>3°C <canvas id="cloudy" width="18" height="18"></canvas></li>
+			</ul>
+			<script>
+						var icons = new Skycons({"color": "#fff"}),
+							  list  = [
+								"partly-cloudy-day"
+							  ],
+							  i;
+
+						  for(i = list.length; i--; )
+							icons.set(list[i], list[i]);
+						  icons.play();
+					</script>
+					<script>
+						 var icons = new Skycons({"color": "#212121"}),
+							  list  = [
+								"clear-day","clear-night","partly-cloudy-night","rain","fog","snow","cloudy"
+							  ],
+							  i;
+
+						  for(i = list.length; i--; )
+							icons.set(list[i], list[i]);
+						  icons.play();
+					</script>
+ -->
+		</div>
+	</div>
+</div>
+<div class="footer-agileits-w3layouts">
+	<p class="agileinfo"> &copy; 2016 Multi Column Widget . All Rights Reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
+</div>
+

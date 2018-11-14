@@ -6,9 +6,11 @@ import { UserComponent } from './user/user.component';
 
 const route : Routes = [
   { path : 'login' , component : LoginComponent },
-  { path : 'user' , component :  UserComponent , canActivate : [AuthGuard]  }, 
+  { path : 'user' , component :  UserComponent    }, 
   { path : '**' , redirectTo : ''}
 ]
 
 
 export const routing = RouterModule.forRoot(route);
+
+//canActivate : [AuthGuard]
